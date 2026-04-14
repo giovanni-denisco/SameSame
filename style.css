@@ -1,0 +1,132 @@
+:root {
+    --bg-color: #0f172a;
+    --card-color: #1e293b;
+    --accent-color: #38bdf8;
+    --text-color: #f1f5f9;
+    --color-standard: #38bdf8;
+    --color-flash: #fbbf24;
+    --color-chi: #2ed573;
+    --color-success: #2ed573;
+    --color-fail: #ff4757;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Font corretto */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#game-container { width: 95%; max-width: 420px; text-align: center; }
+
+h1 { font-size: 3rem; font-weight: 900; text-transform: uppercase; color: var(--accent-color); letter-spacing: -1px; margin-bottom: 20px; }
+
+/* SETUP */
+.setup-box { background: var(--card-color); padding: 25px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
+#teams-list { list-style: none; padding: 0; margin: 15px 0; text-align: left; }
+#teams-list li { background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; margin-bottom: 5px; font-size: 0.9rem; }
+
+/* CARTA */
+.card {
+    background-color: var(--card-color);
+    border-radius: 30px;
+    padding: 40px 20px;
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 6px solid #334155;
+    margin-bottom: 25px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* Bordi Dinamici */
+.card.standard { border-color: var(--color-standard) !important; }
+.card.flash { border-color: var(--color-flash) !important; }
+.card.chi { border-color: var(--color-chi) !important; }
+
+.card.standard .category-badge { color: var(--color-standard); }
+.card.flash .category-badge { color: var(--color-flash); }
+.card.chi .category-badge { color: var(--color-chi); }
+
+.category-badge { 
+    font-weight: 800; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    font-size: 0.75rem; 
+    margin-bottom: 25px;
+    opacity: 0.9;
+}
+
+#main-text { 
+    font-size: 1.6rem; 
+    font-weight: 700; 
+    line-height: 1.4; 
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+/* CONTROLLI */
+#controls { display: flex; gap: 15px; width: 100%; }
+.btn-vote { 
+    flex: 1; 
+    padding: 18px; 
+    border-radius: 18px; 
+    border: none; 
+    color: white; 
+    font-weight: 800; 
+    cursor: pointer; 
+    font-size: 1rem;
+    text-transform: uppercase;
+}
+.btn-wrong { background-color: var(--color-fail); }
+.btn-correct { background-color: var(--color-success); }
+
+#btn-pesca, #btn-start {
+    background-color: var(--accent-color);
+    color: #0f172a; border: none; padding: 15px 35px; border-radius: 50px; 
+    font-weight: 800; cursor: pointer; text-transform: uppercase;
+}
+
+#turn-info { margin-bottom: 10px; font-weight: bold; font-size: 1.1rem; }
+#leaderboard { margin-bottom: 20px; font-size: 0.85rem; opacity: 0.7; letter-spacing: 1px; }
+
+.hidden { display: none !important; }
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: #0f172a;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: var(--accent-color);
+}
+
+#btn-add {
+    background-color: var(--accent-color);
+    color: #0f172a;
+    border: none;
+    padding: 0 20px;
+    border-radius: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+}

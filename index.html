@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Same Same</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Same Same</h1>
+
+        <div id="setup-container">
+            <div class="setup-box">
+                <div class="input-group">
+                    <input type="text" id="team-name-input" placeholder="Nome Squadra...">
+                    <button onclick="aggiungiSquadra()" id="btn-add">Add</button>
+                </div>
+                <ul id="teams-list"></ul>
+                <button onclick="iniziaGioco()" id="btn-start" class="hidden">GIOCA</button>
+            </div>
+        </div>
+
+        <div id="main-game" class="hidden">
+            <div id="turn-info">Tocca a: <span id="current-team-display"></span></div>
+            <div id="leaderboard"></div>
+
+            <div class="card" id="card-display">
+                <div id="category-badge" class="category-badge">Pronti?</div>
+                <div id="main-text">Tocca per pescare</div>
+            </div>
+
+            <div id="controls" class="hidden">
+                <button onclick="gestisciRisposta(false)" class="btn-vote btn-wrong">DIVERSI</button>
+                <button onclick="gestisciRisposta(true)" class="btn-vote btn-correct">UGUALI</button>
+            </div>
+            
+            <button id="btn-pesca" onclick="pescaCarta()">PESCA CARTA</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
